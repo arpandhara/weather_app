@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+
+        <div class="left">
+            <div class="search">
+                <input type="text" class="searchBar" placeholder="Search a location here">
+                <button class="searchBtn">Search</button>
+            </div>
+            <div class="picTemp">
+                <div class="tempBox">
+                    <h1 class="tempDisplay">28<span class="cOrF"C</span></h1>
+                </div>
+                <div class="changeTemp">
+                    <div class="C">
+                        <h3>C</h3>
+                    </div>
+                    <div class="F">
+                        <h3>F</h3>
+                    </div>
+                </div>
+                <div class="frostLayer"></div>
+            </div>
+            <!-- <hr> -->
+            <div class="otherInfo">
+                <div class="condition">
+                </div>
+                <div class="dataOfOtherInfo">
+                    <div class="otherInfoNav">
+                        <p></p><i class="ri-compass-discover-line"></i>
+                    </div>
+                    <div class="otherData">
+                        <div class="otherData_condition">
+                            <p class="input">Condition</p>
+                            <p class="condition_value"></p>
+                        </div>
+                        <div class="otherData_pop">
+                            <p class="input">Chances of Precipitation</p>
+                            <p class="pop_value"><span></span></p>
+                        </div>
+                        <div class="otherData_time">
+                            <p class="input">Date & Time</p>
+                            <p class="time_value"></p>
+                        </div>
+                        <div class="otherData_exactLocation">
+                            <p class="input">Location</p>
+                            <p class="exactLocation_value"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="row1">
+                <div class="feelslike">
+                    <div class="feelslike_text">
+                        <h3>Feels</h3>
+                        <h3>Like</h3>
+                    </div>
+                    <div class="feelslike_temp">
+                        <h1>32</h1>
+                    </div>
+                </div>
+    
+                <div class="uvIndex">
+                    <div class="uvIndex_left">
+                        <div class="uvIndex_left_top">
+                            <p>UV Index</p>
+                        </div>
+                        <div class="uvIndex_left_bottom">
+                            <h1>2</h1>
+                        </div>
+                    </div>
+                    <div class="uvIndex_right">
+                        <h3 class="UV_condition">Low</h3>
+                        <div class="slider">
+                            <img class="slidergola" src="assets/slider.jpg" alt="">
+                            <img class="uv_meter" src="assets/uv meter.svg" alt="">
+                        </div>
+                        <p class="uv_warning">Stay home for the rest of the day</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="visibility">
+                    <div class="visibility_left">
+                        <div class="visibility_left_top">
+                            <h3>Visibility</h3>
+                        </div>
+                        <div class="visibility_left_bottom">
+                            <h1>8</h1>
+                            <p>km</p> 
+                        </div>
+                    </div>
+                    <div class="visibility_right">
+                        <img src="assets/visibility_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                        <h1 class="visibility_condition">Low</h1>
+                        <p>Extremely Poor</p>
+                    </div>
+                </div>
+                <div class="humidity">
+                    <h3>Humidity</h3>
+                    <div class="humidity_center_box">
+                    </div>
+                    <p class="humidityCondition">Low</p>
+                    <p class="humidityValue">8%</p>
+                </div>
+                <div class="aqi">
+                    <div class="aqi_centerBox">
+                        <p>Air Qulaity Index (AQI)</p>
+                        <p class="aqi_Index_value">2</p>
+                        <div class="aqi_displayImg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row3">
+                <div class="windSpeed">
+                    <div class="windSpeedLeft">
+                        <div class="wSL_windSpeed">
+                            <p>WindSpeed</p>
+                            <h1>2</h1>
+                            <p>km/h</p>
+                        </div>
+                        <div class="wSL_windDirection">
+                            <h1>W</h1>
+                            <i class="ri-arrow-drop-right-fill"></i>
+                        </div>
+                    </div>
+                    <div class="windSpeedRight">
+                    </div>
+                </div>
+                <div class="weatherLocation">
+                    <h1>India</h1>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Made by Arpan  | Free Weather Api</p>
+            </div>
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

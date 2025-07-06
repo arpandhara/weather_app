@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=Cambay:ital,wght@0,400;0,700;1,400;1,700&family=Doto:wght@100..900&family=Italiana&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway+Dots&display=swap');
+
+@font-face {
+    font-family: "Ndot";
+    src: url(assets/Ndot-55.otf) format('opentype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+    color: whitesmoke;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    /* padding: 1vw; */
+    display: flex;
+}
+
+.left {
+    height: 100vh;
+    width: 40%;
+    /* border: 2px solid white; */
+    border-right: 1px solid rgb(43, 42, 42);
+}
+
+.search {
+    height: 10%;
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    padding: .8vw;
+    gap: 2vw;
+}
+
+.searchBar {
+    background-color: rgb(43, 42, 42);
+    border: none;
+    padding: 1vw 8vw;
+    color: white;
+    border-radius: 35px;
+    text-align: left;
+}
+
+.searchBtn {
+    background-color: rgb(252, 55, 55);
+    border: none;
+    text-decoration: none;
+    padding: 1vw 2vw;
+    border-radius: 35px;
+    font-weight: 600;
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-family: "Doto";
+    transition: all .3s ease-in-out;
+}
+
+.searchBar:focus {
+    outline: none;
+}
+
+.searchBtn:hover {
+    background-color: rgb(250, 6, 6);
+    scale: 1.02;
+}
+
+.picTemp {
+    width: 100%;
+    height: 60%;
+    /* border: 2px solid rebeccapurple; */
+    background-image: url(assets/6213b08d236b115bed2e48ad1cb2177c-removebg-preview.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    border-bottom: 1px solid rgb(43, 42, 42);
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+}
+
+.frostLayer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(20px);
+}
+
+.tempBox {
+    position: absolute;
+    height: 7vw;
+    width: 7vw;
+    z-index: 100000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tempDisplay,
+.cOrF {
+    font-size: 7vw;
+    font-family: "Ndot";
+    font-weight: 500;
+}
+
+.changeTemp {
+    height: 8%;
+    width: 20%;
+    /* border: 1px solid; */
+    position: absolute;
+    right: 2vw;
+    top: 1vw;
+    z-index: 1000000;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.C,
+.F {
+    height: 100%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid white;
+    transition: all 0.3s ease-in-out;
+}
+
+.C h3,
+.F h3 {
+    font-family: "Doto";
+}
+
+.C {
+    background-color: rgb(252, 55, 55);
+}
+
+.otherInfo {
+    width: 100%;
+    height: 30%;
+    /* border: 1px solid red; */
+    padding: .5vw;
+    display: flex;
+    gap: 1.5vw;
+}
+
+.condition {
+    height: 100%;
+    width: 34%;
+    border-radius: 45px;
+    background-color: rgb(252, 55, 55);
+    position: relative;
+    background-image: url(assets/sunny.svg);
+    background-size: 80% 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
+}
+
+.dataOfOtherInfo {
+    width: 62%;
+    height: 100%;
+    /* border: 1px solid; */
+    border-radius: 40px;
+    background-color: rgb(43, 42, 42);
+    padding: .4vw;
+}
+
+.otherInfoNav {
+    width: 100%;
+    height: 15%;
+    /* border: 1px solid; */
+    border-radius: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.otherInfoNav p {
+    font-weight: 500;
+    transition: all 0.3 ease-in-out;
+}
+
+.ri-compass-discover-line {
+    font-size: 1.1vw;
+    color: rgb(252, 55, 55);
+    text-align: center;
+}
+
+.otherData {
+    width: 100%;
+    height: 84%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid;
+}
+
+.otherData_condition,
+.otherData_pop,
+.otherData_time,
+.otherData_exactLocation {
+    width: 100%;
+    height: 22%;
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5vw;
+}
+
+.input {
+    font-weight: 500;
+    color: rgb(158, 157, 157);
+}
+
+.condition_value,
+.pop_value,
+.time_value,
+.exactLocation_value {
+    font-size: .9vw;
+    transition: all 0.5s ease-in-out;
+}
+
+/* __________________________________________________________________________________________________ */
+
+.right {
+    height: 100%;
+    width: 60%;
+    /* border : 1px solid; */
+    padding: .8vw;
+}
+
+.row1 {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    gap: 1.5vw;
+}
+
+.feelslike {
+    height: 100%;
+    width: 40%;
+    background-color: rgb(216, 215, 215);
+    border-radius: 3vw;
+    color: black;
+    display: flex;
+}
+
+.feelslike_text {
+    height: 100%;
+    width: 40%;
+    border-right: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feelslike_temp {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feelslike_temp h1 {
+    color: black;
+    font-size: 6vw;
+    font-family: "Ndot";
+}
+
+.feelslike_text h3 {
+    color: black;
+    font-size: 2vw;
+    font-family: "Raleway Dots";
+}
+
+.uvIndex {
+    height: 100%;
+    width: 57%;
+    background-color: rgb(43, 42, 42);
+    border-radius: 3vw;
+    display: flex;
+}
+
+.uvIndex_left {
+    height: 100%;
+    width: 40%;
+    padding: 2vw;
+}
+
+.uvIndex_left_top {
+    text-align: center;
+    font-weight: 500;
+    width: 100%;
+    height: 10%;
+}
+
+.uvIndex_left_top p {
+    font-family: "Doto";
+}
+
+.uvIndex_left_bottom {
+    text-align: center;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
+}
+
+.uvIndex_left_bottom h1 {
+    font-size: 6vw;
+}
+
+.uvIndex_right {
+    height: 100%;
+    width: 60%;
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.uv_meter {
+    width: 70%;
+    margin: .5vw 0vw;
+}
+
+.UV_condition {
+    font-size: 2vw;
+}
+
+.row2 {
+    width: 100%;
+    height: 30%;
+    /* background-color: rebeccapurple; */
+    margin-top: 1vw;
+    display: flex;
+    gap: 0.5vw;
+}
+
+.visibility,
+.humidity,
+.aqi {
+    height: 100%;
+    width: 34%;
+    /* border: 1px solid; */
+    border-radius: 3vw;
+    background-color: rgb(43, 42, 42);
+}
+
+.visibility {
+    display: flex;
+    overflow: hidden;
+}
+
+.visibility_left {
+    height: 100%;
+    width: 40%;
+    /* border: 1px solid; */
+}
+
+.visibility_left_top {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .8vw;
+}
+
+.visibility_left_bottom {
+    width: 100%;
+    height: 50%;
+    padding: .8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.visibility_left_bottom h1 {
+    font-size: 4vw;
+    /* color: rgb(252, 55, 55); */
+    transition: 0.3s all ease-in-out;
+}
+
+.visibility_left_top h3 {
+    font-weight: 700;
+    font-family: "Raleway Dots";
+}
+
+.visibility_right {
+    height: 100%;
+    width: 60%;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.visibility_right p{
+    font-size: .7vw;
+    text-align: center;
+}
+
+.humidity{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.humidity h3{
+    font-family: "Raleway Dots";
+}
+
+.humidity p{
+    transition: all 0.3s ease-in-out;
+}
+
+.humidity_center_box{
+    height: 50%;
+    width: 50%;
+    background-image: url(assets/humidity_mid_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.aqi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: .5vw; */
+}
+
+.aqi_centerBox{
+    height: 85%;
+    width: 85%;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aqi_displayImg{
+    width: 70%;
+    height: 70%;
+    background-image: url(assets/aqi_moderate.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: .5vw;
+    transition: 0.3s all ease-in-out;
+}
+
+.row3{
+    width: 100%;
+    height: 30%;
+    margin-top: .8vw;
+    display: flex;
+    gap: .8vw;
+}
+
+.windSpeed{
+    height: 100%;
+    width: 60%;
+    /* background-color: aliceblue; */
+    /* border: 1px solid; */
+    background-color: rgb(43, 42, 42);
+    border-radius: 3vw;
+    display: flex;
+}
+
+.windSpeedLeft{
+    height: 100%;
+    width: 60%;
+    border-right:1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+
+.wSL_windSpeed , .wSL_windDirection{
+    height: 70%;
+    width: 45%;
+    background-color: aliceblue;
+    border-radius: 50%;
+    position: relative;
+}
+
+.windSpeedRight{
+    height: 100%;
+    width: 40%;
+    background-image: url(assets/compass.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: rotate(0deg);
+    position: relative;
+    transition: all 1s ease-in-out;
+}
+
+.ri-arrow-drop-right-fill{
+    font-size: 3vw;
+    color: red;
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%,-50%);
+}
+
+.wSL_windSpeed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wSL_windSpeed p , .wSL_windSpeed h1{
+    color: black;
+    font-weight: 500;
+}
+
+.wSL_windSpeed p{
+    font-size: .9vw;
+}
+
+.wSL_windSpeed h1{
+    font-size: 3vw;
+    font-family: "NDot";
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+.wSL_windDirection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.wSL_windDirection h1{
+    font-size: 5vw;
+    color: black;
+    transition: all 1s ease-in-out;
+}
+
+.weatherLocation{
+    height: 100%;
+    width: 38%;
+    /* border: 1px solid; */
+    background-color: rgb(224, 226, 228);
+    border-radius: 3vw;
+    background-image: url(https://i.pinimg.com/736x/68/73/39/687339b55b4af9579946c97b9fc475d6.jpg);
+    position: relative;
+}
+
+.weatherLocation h1{
+    color: black;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    font-size: 1.7vw;
+}
+
+.footer{
+    height: auto;
+    width: 100%;
+    /* background-color: rebeccapurple; */
+    margin-top: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer p{
+    font-size: .7vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1024px) and (min-width:768px) {
+
+    .searchBar {
+        padding: .8vw 5.8vw;
+        font-size: 1.24vw;
+    }
+
+    .searchBtn {
+        font-size: 1.2vw;
+    }
+
+    .tempDisplay,
+    .cOrF {
+        font-size: 6vw;
+    }
+
+    .changeTemp {
+        right: 1vw;
+        top: 1vw;
+    }
+
+    .C,
+    .F {
+        height: 90%;
+        width: 40%;
+    }
+
+    .C h3,
+    .F h3 {
+        font-family: "Doto";
+        font-size: 1.2vw;
+    }
+
+    .condition {
+        height: 100%;
+        width: 45%;
+        border-radius: 40px;
+    }
+
+    .dataOfOtherInfo {
+        border-radius: 34px;
+    }
+
+    .otherInfoNav p {
+        font-size: 1.2vw;
+    }
+
+    .input {
+        font-size: 1vw;
+    }
+
+    .condition_value,
+    .pop_value,
+    .time_value,
+    .exactLocation_value {
+        font-size: .9vw;
+        transition: all 0.5s ease-in-out;
+    }
+
+
+}
