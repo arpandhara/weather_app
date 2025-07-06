@@ -2,6 +2,7 @@
 
 // the input 
 
+const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 let inputLocation = document.querySelector(".searchBar");
 let searchBtn = document.querySelector(".searchBtn");
 let temprature = document.querySelector(".tempDisplay");
@@ -37,7 +38,7 @@ let sunnyCodes = [1000];
 
 
 async function getData(targetLocation) {
-    let raw = await fetch(`http://api.weatherapi.com/v1/current.json?key=f6eaccb109da411389991432250507&q=${targetLocation}&aqi=yes`);
+    let raw = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${targetLocation}&aqi=yes`);
     let data = await raw.json();
     return await data;
 }
