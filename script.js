@@ -2,7 +2,7 @@
 
 // the input 
 
-const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+const apiKey = 'f6eaccb109da411389991432250507';
 let inputLocation = document.querySelector(".searchBar");
 let searchBtn = document.querySelector(".searchBtn");
 let temprature = document.querySelector(".tempDisplay");
@@ -37,7 +37,7 @@ let fogCodes = [1030, 1135, 1147];
 let sunnyCodes = [1000];
 
 
-async function getData(targetLocation) {
+async function getData(targetLocation , apiKey) {
     let raw = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${targetLocation}&aqi=yes`);
     let data = await raw.json();
     return await data;
@@ -46,7 +46,7 @@ async function getData(targetLocation) {
 searchBtn.addEventListener("click", async function (e) {
     e.preventDefault();
     var place = inputLocation.value;
-    let temp = await getData(place);
+    let temp = await getData(place , apiKey);
     temprature.textContent = Math.floor(temp.current.temp_c);
     loc = place;
     inputLocation.value = "";
@@ -66,7 +66,7 @@ searchBtn.addEventListener("click", async function (e) {
 inputLocation.addEventListener("keydown", async function (e) {
     if (e.key === "Enter") {
         var place = inputLocation.value;
-        let temp = await getData(place);
+        let temp = await getData(place , apiKey);
         temprature.textContent = Math.floor(temp.current.temp_c);
         loc = place;
         inputLocation.value = "";
@@ -129,7 +129,7 @@ async function exactlocation(data) {
 
 
 farenheit.addEventListener("click", async function () {
-    let temp = await getData(loc);
+    let temp = await getData(loc , apiKey);
     temprature.textContent = Math.floor(temp.current.temp_f);
     farenheit.style.backgroundColor = "rgb(252, 55, 55)";
     celcius.style.backgroundColor = "black";
@@ -138,7 +138,7 @@ farenheit.addEventListener("click", async function () {
 
 
 celcius.addEventListener("click", async function () {
-    let temp = await getData(loc);
+    let temp = await getData(loc , apiKey);
     temprature.textContent = Math.floor(temp.current.temp_c);
     console.log(temp);
     celcius.style.backgroundColor = "rgb(252, 55, 55)";
