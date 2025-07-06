@@ -38,7 +38,7 @@ let sunnyCodes = [1000];
 
 
 async function getData(targetLocation , apiKey) {
-    let raw = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${targetLocation}&aqi=yes`);
+    let raw = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${targetLocation}&aqi=yes`);
     let data = await raw.json();
     return await data;
 }
